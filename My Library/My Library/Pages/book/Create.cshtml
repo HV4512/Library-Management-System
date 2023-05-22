@@ -1,0 +1,83 @@
+﻿@page
+@model My_Library.Pages.book.CreateModel
+@{
+}
+
+<br>
+<h2>New Client</h2>
+
+@if (Model.errorMessage.Length>0)
+{
+	<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+		<strong>@Model.errorMessage</strong>
+		<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+	</div>
+}
+
+<form method="POST">
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Reg. No.</label>
+		<div class="col-sm-6">
+			<input type ="text" class="form-control" name="Reg_Number" value="@Model.clientInfo.Reg_Number">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="name" value="@Model.clientInfo.name">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Book Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="bookname" value="@Model.clientInfo.bookname">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Phone No.</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="phone" value="@Model.clientInfo.phone">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Issue Date</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="IssueDate" value="@Model.clientInfo.IssueDate">
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Return Date</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="ReturnDate" value="@Model.clientInfo.ReturnDate">
+		</div>
+	</div>
+
+	@if (Model.successMessage.Length > 0)
+	{
+		<div class="row mb-3">
+		<div class="col-sm-9">
+
+		<div class='alert alert-success alert-dismissible fade show' role='alert'>
+			<strong>@Model.successMessage</strong>
+			<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+		</div>
+		</div>
+		</div>
+	}
+
+
+
+
+
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+		<div class="col-sm-3 d-grid">
+			<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+		</div>
+	</div>
+	
+
+</form> 

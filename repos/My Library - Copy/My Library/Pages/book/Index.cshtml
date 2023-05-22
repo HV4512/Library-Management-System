@@ -1,0 +1,41 @@
+﻿@page
+@model My_Library.Pages.book.IndexModel
+@{
+}
+
+
+<br>
+<h2>List Of Students</h2>
+<a class='btn btn-primary btn-sm' href='/book/Create'>New Issue</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Sl No.</th>
+			<th>Reg. No.</th>
+			<th>Name</th>
+			<th>Book Name</th>
+			<th>Phone No.</th>
+			<th>Issue Date</th>
+			<th>Return Date</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody> 
+		@foreach(var item in Model.listClients)
+		{
+			<tr>
+				<td>@item.Sl_no</td>
+				<td>@item.Reg_Number</td>
+				<td>@item.name</td>
+				<td>@item.bookname</td>
+				<td>@item.phone</td>
+				<td>@item.IssueDate</td>
+				<td>@item.ReturnDate</td>
+				<td>
+					<a class="btn btn-primary btn-sm" href="/book/Edit?id=@item.Sl_no">Edit</a>
+					<a id ="dlt" class="btn btn-primary btn-sm" href="/book/Delete?id=@item.Sl_no">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
